@@ -40,6 +40,7 @@ Thermostat.prototype.powerSavingOn = function() {
 };
 
 Thermostat.prototype.reset = function() {
+    this.powerSavingOn();
     this._current_temperature = this._DEFAULT_TEMPERATURE;
 };
 
