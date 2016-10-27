@@ -1,3 +1,8 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-image: linear-gradient(to right, white, green)
+}
+
 .high-usage {
   color: red;
 }

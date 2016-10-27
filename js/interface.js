@@ -48,6 +48,7 @@ $( document ).ready(function() {
 
      function powerSavingColor(){
        $('#power-saving-status').attr('class', thermostat._powerSaving);
+       $('#body').attr('class', thermostat._powerSaving);
      }
 
      function weatherApp(){
