@@ -1,8 +1,8 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #FFF;
+  color: 	#696969;
   line-height: 2.5em;
-  background-color: #0D1754;
+  background-color: #A9A9A9;
   font-size: 1em;
   margin:0 auto;
   max-width: 600px;
@@ -10,7 +10,7 @@ body {
 
 button {
   font-family: 'Open Sans', sans-serif;
-  color: #FFF;
+  color: 	#696969;
   font-size: 1em;
   background-color: Transparent;
   background-repeat:no-repeat;
