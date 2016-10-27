@@ -5,18 +5,26 @@
         <link rel='stylesheet' href='css/interface.css'>
     </head>
     <body>
+    
+      <section>
+        <h1>Outside Temperature: <span id="outside-temperature"></span> </h1>
+      </section>
+      
       <p>
-        <h1 id="current_temp"></h1>
-        Power saving mode <span id="power_saving_status">on</span>
+        <h1 id="current-temp"></h1>
+        Power saving mode <span id="power-saving-status">on</span>
         <button id="up">Up</button>
         <button id="down">Down</button>
-        <button id="power_savings_on">Power Savings On</button>
-        <button id="power_savings_off">Power Savings Off</button>
+        <button id="power-savings-on">Power Savings On</button>
+        <button id="power-savings-off">Power Savings Off</button>
         <button id="reset">Reset</button>
       </p>
+
       <script src="https://code.jquery.com/jquery-3.1.1.js"
-       integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-       crossorigin="anonymous"></script>
+              integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+              crossorigin="anonymous">
+      </script>
+
       <script src='js/Thermostat.js'></script>
       <script src='js/interface.js'></script>
     </body>

@@ -13,33 +13,37 @@ $( document ).ready(function() {
         updateTemp();
     });
 
-    $( "#power_savings_on" ).click( function () {
+    $( "#power-savings-on" ).click( function () {
         thermostat.powerSavingOn();
         updateTemp();
-        $("#power_saving_status").text('on');
+        $("#power-saving-status").text('on');
         powerSavingColor();
     });
 
-     $( "#power_savings_off" ).click( function () {
+     $( "#power-savings-off" ).click( function () {
         thermostat.powerSavingOff();
-        $("#power_saving_status").text("off");
+        $("#power-saving-status").text("off");
         powerSavingColor();
      });
 
      $( "#reset" ).click( function() {
        thermostat.reset();
        updateTemp();
-       $("#power_saving_status").text('on');
+       $("#power-saving-status").text('on');
        powerSavingColor();
      });
 
+     $.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=???&units=metric', function(data) {
+        $('#current-temperature').text(data.main.temp);
+     })
+
      function updateTemp(){
        powerSavingColor();
-       $("#current_temp").text(thermostat._current_temperature);
-       $('#current_temp').attr('class', thermostat.energyUse());
+       $("#current-temp").text(thermostat._current_temperature);
+       $('#current-temp').attr('class', thermostat.energyUse());
      };
 
      function powerSavingColor(){
-       $('#power_saving_status').attr('class', thermostat._powerSaving);
+       $('#power-saving-status').attr('class', thermostat._powerSaving);
      }
 });
