@@ -8,6 +8,8 @@ $( document ).ready(function() {
     $( "#up" ).click(function( event ) {
         thermostat.up();
         updateTemp();
+        var temp = thermostat._current_temperature;
+        $.post("/data", 'hello');
     });
 
     $( "#down" ).click(function( event ) {
