@@ -2,6 +2,8 @@ $( document ).ready(function() {
   var thermostat = new Thermostat();
 
     updateTemp();
+    weatherApp();
+    cityName();
 
     $( "#up" ).click(function( event ) {
         thermostat.up();
@@ -33,17 +35,34 @@ $( document ).ready(function() {
        powerSavingColor();
      });
 
-     $.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=???&units=metric', function(data) {
-        $('#current-temperature').text(data.main.temp);
+     $('#citysub').click(function(){
+       cityName();
+       weatherApp();
      })
 
      function updateTemp(){
        powerSavingColor();
-       $("#current-temp").text(thermostat._current_temperature);
+       $("#current-temp").text(thermostat._current_temperature + ascii(176) + 'C');
        $('#current-temp').attr('class', thermostat.energyUse());
      };
 
      function powerSavingColor(){
        $('#power-saving-status').attr('class', thermostat._powerSaving);
      }
+
+     function weatherApp(){
+       var url = 'http://api.openweathermap.org/data/2.5/weather?q=' ;
+       var city = $('#cityname').val() || 'London' ;
+       var api = '&appid=3aa07a48be658a901acbe6b44ee42e17' ;
+       var units = '&units=metric' ;
+       $.get(url + city + api + units, function(data) {
+          $('#outside-temperature').text(data.main.temp + ascii(176) + 'C');
+        });
+      }
+
+      function cityName() {
+        $('#citytemp').text($('#cityname').val() || 'London')
+      }
+
+      function ascii (a) { return String.fromCharCode(a); }
 });
