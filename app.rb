@@ -2,7 +2,6 @@ require 'sinatra/base'
 
 class Thermostat < Sinatra::Base
   get '/' do
-    'Hello thermostat!'
     erb :'index'
   end
 
